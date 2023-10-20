@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap");
+@import "../colorvariables.css";
+.holder {
+  display: grid;
+  grid-template-columns: 0.1fr 2fr;
+  grid-auto-flow: column;
+  border-radius: 0.9375rem;
+  background: var(--light-background);
+  min-width: 45.625rem;
+  min-height: 26.1875rem;
+  padding: 3rem;
+  gap: 2rem;
+}
+.avatar {
+  background-image: url("../assets/avatar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 7.3125rem;
+  height: 7.3125rem;
+  border-radius: 50%;
+}
+.bio {
+  display: grid;
+}
+.info {
+  display: grid;
+  grid-auto-flow: column;
+}
+.name {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin: 0;
+}
+.username {
+  color: #0079ff;
+  font-family: "Space Mono";
+  font-weight: 400;
+  margin: 0;
+}
+.joinDate {
+  color: var(--text-color);
+  text-align: right;
+  font-family: "Space Mono";
+  font-size: 0.9375rem;
+  font-weight: 400;
+  margin-top: 0.7rem;
+}
+.bioText {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5625rem;
+  opacity: 0.75;
+}
+.statsHolder {
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  border-radius: 0.9375rem;
+  background: var(--dark-background);
+  width: 30rem;
+  height: 5.3125rem;
+  padding: 1rem 2rem;
+  gap: 4rem;
+}
+.statText {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin: 0;
+}
+.statNumber {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0;
+}
+.extraInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.extraHolder {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1.2rem;
+}
+.extraText {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 0.9375rem;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none;
+}
+.extraHolder > a:hover {
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+.locationIcon {
+  background-image: url("../assets/icon-location.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.websiteIcon {
+  background-image: url("../assets/icon-website.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.twitterIcon {
+  background-image: url("../assets/icon-twitter.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.companyIcon {
+  background-image: url("../assets/icon-company.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.userInfoMobile {
+  display: grid;
+  grid-auto-flow: column;
+}
+.unavailable {
+  opacity: 0.7;
+}
+.holder {
+  animation: result_box_appearance 0.5s ease-in-out;
+}
+.avatarMobile {
+  display: none;
+}
+@keyframes result_box_appearance {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  70% {
+    opacity: 0;
+    height: 70%;
+  }
+  100% {
+    opacity: 1;
+    height: 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .holder {
+    max-width: 35.8125rem;
+    max-height: 30.0625rem;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .holder {
+    max-width: 90vw;
+    min-width: 351px !important;
+    padding: 0rem;
+  }
+  .avatar {
+    display: none;
+  }
+  .avatarMobile {
+    display: block;
+    background-image: url("../assets/avatar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 4.375rem;
+    max-height: 4.375rem;
+    border-radius: 50%;
+  }
+  .bio {
+    padding: 2rem;
+  }
+  .bioText {
+    font-size: 0.8125rem;
+    max-width: 18rem;
+  }
+  .info {
+    grid-template-columns: 0.2fr 1fr;
+    gap: 1rem;
+  }
+  .userInfoMobile {
+    display: grid;
+    grid-auto-flow: row;
+  }
+  .joinDate {
+    text-align: left;
+    margin: 0;
+    font-size: 0.8125rem;
+  }
+  .name {
+    font-size: 1rem;
+  }
+  .extraInfo {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .username {
+    font-size: 0.8125rem;
+  }
+  .statsHolder {
+    max-width: 16rem;
+    padding: 0.5rem 1rem;
+    gap: 2.5rem;
+    justify-content: center;
+  }
+  .statNumber {
+    font-size: 1rem;
+  }
+  .statText {
+    font-size: 0.6rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .loader {
+    transform: translate(6rem) !important;
+  }
+}

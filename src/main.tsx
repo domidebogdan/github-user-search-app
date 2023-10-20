@@ -1,0 +1,12 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App.tsx";
+import classes from "./index.module.css";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <div className={classes.mainComponent}>
+      <App />
+    </div>
+  </React.StrictMode>
+);

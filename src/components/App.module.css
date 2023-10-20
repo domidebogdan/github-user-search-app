@@ -1,0 +1,17 @@
+@import "../colorvariables.css";
+:root {
+  margin: 0 auto;
+  text-align: center;
+}
+.holder {
+  display: grid;
+  gap: 1rem;
+}
+body {
+  background: var(--dark-background);
+}
+@media (max-width: 768px) {
+  .holder {
+    max-width: 90vw;
+  }
+}

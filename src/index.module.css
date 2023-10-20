@@ -1,0 +1,13 @@
+@import "colorvariables.css";
+:root {
+  margin: 0;
+  padding: 0;
+}
+.mainComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}

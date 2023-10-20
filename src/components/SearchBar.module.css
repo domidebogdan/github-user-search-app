@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap");
+@import "../colorvariables.css";
+.icon {
+  background-image: url("../assets/icon-search.svg");
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.holder {
+  display: grid;
+  grid-template-columns: 0.1fr 2fr;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-radius: 0.9375rem;
+  background: var(--light-background);
+  min-width: 45.625rem;
+  min-height: 4.3125rem;
+  gap: 1rem;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 0.1fr;
+}
+form > p {
+  margin: 0;
+  align-self: center;
+  color: #f74646;
+  font-family: "Space Mono";
+  font-size: 0.9375rem;
+  font-weight: 700;
+  opacity: 0;
+}
+.error {
+  opacity: 1;
+}
+.searchTerm {
+  color: var(--text-color);
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: Space Mono;
+  font-size: 1.125rem;
+}
+.button {
+  border: none;
+  background: #0079ff;
+  width: 6.625rem;
+  height: 3rem;
+  border-radius: 0.625rem;
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 1rem;
+  font-weight: 400;
+}
+button:hover {
+  background: #60abff;
+}
+input:hover {
+  background: var(--dark-background);
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .holder {
+    max-width: 35.8125rem;
+    max-height: 4.3125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .holder {
+    max-width: 85vw;
+    min-width: 0 !important;
+    padding-right: 0;
+  }
+  input[type="text"] {
+    max-width: 50vw;
+    font-size: 0.7rem;
+  }
+  form {
+    grid-template-columns: 1fr 0fr 0.1fr;
+  }
+  form > p {
+    display: none;
+    visibility: hidden;
+    text-align: center;
+    font-size: 0.8125rem;
+  }
+  .error {
+    display: block;
+    visibility: inherit;
+    transform: translate(-2rem);
+  }
+  .button {
+    width: 5.625rem;
+    height: 2.5rem;
+    font-size: 0.8125rem;
+    margin-left: -1rem;
+  }
+}

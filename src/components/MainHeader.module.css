@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap");
+@import "../colorvariables.css";
+.holder {
+  display: grid;
+  grid-auto-flow: column;
+  min-width: 45.625rem;
+}
+
+.logo {
+  color: var(--text-color);
+  font-family: "Space Mono";
+  font-size: 1.625rem;
+  justify-self: start;
+}
+.themeSwitcher {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+.currentTheme {
+  color: var(--text-color);
+  text-align: right;
+  font-family: "Space Mono";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.15625rem;
+}
+.themeIcon {
+  background-image: url("../assets/icon-sun.svg");
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.themeIconLight {
+  background-image: url("../assets/icon-moon.svg");
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.themeSwitcher:hover {
+  filter: opacity(50%);
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .holder {
+    width: 35.8125rem;
+    height: 4.3125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .holder {
+    width: 90vw;
+    min-width: 351px !important;
+  }
+  .logo {
+    margin: 0;
+  }
+}
