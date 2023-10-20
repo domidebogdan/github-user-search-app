@@ -3,6 +3,31 @@ import { useState, useEffect } from "react";
 function MainHeader() {
   const [currentTheme, setCurrentTheme] = useState("");
 
+  function changeTheme() {
+    let currentThemeIcon = document.querySelector(`.${classes.themeIcon}`);
+    if (currentTheme === "DARK") {
+      document.body.classList.toggle(classes.light);
+      let currentThemeText = document.querySelector(`.${classes.currentTheme}`);
+      if (currentThemeText) {
+        currentThemeText.innerHTML = "DARK";
+      }
+      if (currentThemeIcon) {
+        currentThemeIcon.classList.toggle(classes.themeIconLight);
+      }
+      setCurrentTheme("LIGHT");
+    } else {
+      document.body.classList.toggle(classes.light);
+      let currentThemeText = document.querySelector(`.${classes.currentTheme}`);
+      if (currentThemeText) {
+        currentThemeText.innerHTML = "LIGHT";
+      }
+      if (currentThemeIcon) {
+        currentThemeIcon.classList.toggle(classes.themeIconLight);
+      }
+      setCurrentTheme("DARK");
+    }
+  }
+
   useEffect(() => {
     if (
       window.matchMedia &&
@@ -10,30 +35,20 @@ function MainHeader() {
       currentTheme === ""
     ) {
       setCurrentTheme("DARK");
-      document.querySelector(`.${classes.currentTheme}`).innerHTML = "LIGHT";
+      let currentThemeText = document.querySelector(`.${classes.currentTheme}`);
+      if (currentThemeText) {
+        currentThemeText.innerHTML = "LIGHT";
+      }
     } else {
       setCurrentTheme("LIGHT");
-      document.querySelector(`.${classes.currentTheme}`).innerHTML = "DARK";
+      let currentThemeText = document.querySelector(`.${classes.currentTheme}`);
+      if (currentThemeText) {
+        currentThemeText.innerHTML = "DARK";
+      }
       document.body.classList.toggle(classes.light);
     }
   }, []);
 
-  function changeTheme() {
-    let currentThemeIcon = document.querySelector(`.${classes.themeIcon}`);
-    if (currentTheme === "DARK") {
-      document.body.classList.toggle(classes.light);
-      document.querySelector(`.${classes.currentTheme}`).innerHTML = "DARK";
-      currentThemeIcon?.classList.toggle(classes.themeIconLight);
-
-      setCurrentTheme("LIGHT");
-    } else {
-      document.body.classList.toggle(classes.light);
-      document.querySelector(`.${classes.currentTheme}`).innerHTML = "LIGHT";
-      currentThemeIcon?.classList.toggle(classes.themeIconLight);
-
-      setCurrentTheme("DARK");
-    }
-  }
   return (
     <>
       <div className={classes.holder}>
